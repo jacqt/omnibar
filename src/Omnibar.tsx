@@ -142,7 +142,6 @@ export default class Omnibar<T> extends React.PureComponent<
     const maxHeight = this.props.maxViewableResults
       ? this.props.maxViewableResults * DEFAULT_HEIGHT
       : null;
-    debugger;
     return (
       <div style={this.props.rootStyle}>
         {React.createElement(Input, {
