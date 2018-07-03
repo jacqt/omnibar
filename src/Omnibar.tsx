@@ -99,19 +99,24 @@ export default class Omnibar<T> extends React.PureComponent<
     if (evt.ctrlKey && evt.keyCode === 80) {
       // ctrl+p
       this.prev();
+      evt.preventDefault();
     } else if (evt.ctrlKey && evt.keyCode == 78) {
       // ctrl+n
       this.next();
+      evt.preventDefault();
     } else {
       switch (evt.keyCode) {
         case KEYS.UP:
           this.prev();
+          evt.preventDefault();
           break;
         case KEYS.DOWN:
           this.next();
+          evt.preventDefault();
           break;
         case KEYS.ENTER:
           this.action();
+          evt.preventDefault();
           break;
       }
     }

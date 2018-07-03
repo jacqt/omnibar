@@ -317,19 +317,24 @@ var Omnibar$1 = /** @class */ (function(_super) {
       if (evt.ctrlKey && evt.keyCode === 80) {
         // ctrl+p
         _this.prev();
+        evt.preventDefault();
       } else if (evt.ctrlKey && evt.keyCode == 78) {
         // ctrl+n
         _this.next();
+        evt.preventDefault();
       } else {
         switch (evt.keyCode) {
           case KEYS.UP:
             _this.prev();
+            evt.preventDefault();
             break;
           case KEYS.DOWN:
             _this.next();
+            evt.preventDefault();
             break;
           case KEYS.ENTER:
             _this.action();
+            evt.preventDefault();
             break;
         }
       }
