@@ -307,7 +307,6 @@ var Omnibar$1 = /** @class */ (function(_super) {
       action.call(null, item);
     };
     _this.handleChange = function(value) {
-      console.log('value', JSON.stringify(value));
       if (value) {
         _this.query(value);
       } else {
