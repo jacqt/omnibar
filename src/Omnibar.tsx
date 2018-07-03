@@ -96,16 +96,24 @@ export default class Omnibar<T> extends React.PureComponent<
   };
 
   handleKeyDown = (evt: any /* Event */) => {
-    switch (evt.keyCode) {
-      case KEYS.UP:
-        this.prev();
-        break;
-      case KEYS.DOWN:
-        this.next();
-        break;
-      case KEYS.ENTER:
-        this.action();
-        break;
+    if (evt.ctrlKey && evt.keyCode === 80) {
+      // ctrl+p
+      this.prev();
+    } else if (evt.ctrlKey && evt.keyCode == 78) {
+      // ctrl+n
+      this.next();
+    } else {
+      switch (evt.keyCode) {
+        case KEYS.UP:
+          this.prev();
+          break;
+        case KEYS.DOWN:
+          this.next();
+          break;
+        case KEYS.ENTER:
+          this.action();
+          break;
+      }
     }
   };
 

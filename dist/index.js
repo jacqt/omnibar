@@ -314,16 +314,24 @@ var Omnibar$1 = /** @class */ (function(_super) {
       }
     };
     _this.handleKeyDown = function(evt /* Event */) {
-      switch (evt.keyCode) {
-        case KEYS.UP:
-          _this.prev();
-          break;
-        case KEYS.DOWN:
-          _this.next();
-          break;
-        case KEYS.ENTER:
-          _this.action();
-          break;
+      if (evt.ctrlKey && evt.keyCode === 80) {
+        // ctrl+p
+        _this.prev();
+      } else if (evt.ctrlKey && evt.keyCode == 78) {
+        // ctrl+n
+        _this.next();
+      } else {
+        switch (evt.keyCode) {
+          case KEYS.UP:
+            _this.prev();
+            break;
+          case KEYS.DOWN:
+            _this.next();
+            break;
+          case KEYS.ENTER:
+            _this.action();
+            break;
+        }
       }
     };
     _this.handleMouseEnterItem = function(hoveredIndex) {
