@@ -366,7 +366,7 @@ var Omnibar$1 = /** @class */ (function(_super) {
       : null;
     return React.createElement(
       'div',
-      { style: this.props.rootStyle },
+      { className: 'foo', style: this.props.rootStyle },
       React.createElement(Input, {
         defaultValue: this.props.defaultValue,
         autoFocus: this.props.autoFocus,
