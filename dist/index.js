@@ -307,6 +307,7 @@ var Omnibar$1 = /** @class */ (function(_super) {
       action.call(null, item);
     };
     _this.handleChange = function(value) {
+      console.log('value', JSON.stringify(value));
       if (value) {
         _this.query(value);
       } else {
@@ -360,13 +361,11 @@ var Omnibar$1 = /** @class */ (function(_super) {
       }
     };
     _this.query = debounce(_this.query, _this.props.inputDelay);
+    _this.reset();
     return _this;
   }
   Omnibar.prototype.reset = function() {
-    this.setState({
-      results: [],
-      displayResults: false,
-    });
+    this.query('');
   };
   Omnibar.prototype.componentWillReceiveProps = function(nextProps) {
     if (this.props.defaultValue !== nextProps.defaultValue) {

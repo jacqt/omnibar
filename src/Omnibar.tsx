@@ -33,6 +33,7 @@ export default class Omnibar<T> extends React.PureComponent<
   constructor(props: Omnibar.Props<T>) {
     super(props);
     this.query = debounce(this.query, this.props.inputDelay);
+    this.reset();
   }
 
   query = (value: string) => {
@@ -50,10 +51,7 @@ export default class Omnibar<T> extends React.PureComponent<
   };
 
   reset() {
-    this.setState({
-      results: [],
-      displayResults: false,
-    });
+    this.query('');
   }
 
   prev = () => {
