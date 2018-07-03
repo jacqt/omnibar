@@ -364,7 +364,6 @@ var Omnibar$1 = /** @class */ (function(_super) {
     var maxHeight = this.props.maxViewableResults
       ? this.props.maxViewableResults * DEFAULT_HEIGHT
       : null;
-    debugger;
     return React.createElement(
       'div',
       { style: this.props.rootStyle },
