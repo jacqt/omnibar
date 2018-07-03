@@ -144,7 +144,7 @@ export default class Omnibar<T> extends React.PureComponent<
       : null;
 
     return (
-      <div style={this.props.rootStyle}>
+      <div className={'foo'} style={this.props.rootStyle}>
         {React.createElement(Input, {
           defaultValue: this.props.defaultValue,
           autoFocus: this.props.autoFocus,
