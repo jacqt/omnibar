@@ -364,12 +364,10 @@ var Omnibar$1 = /** @class */ (function(_super) {
     var maxHeight = this.props.maxViewableResults
       ? this.props.maxViewableResults * DEFAULT_HEIGHT
       : null;
+    debugger;
     return React.createElement(
       'div',
-      {
-        className: this.state.displayResults ? '' : 'empty',
-        style: this.props.rootStyle,
-      },
+      { style: this.props.rootStyle },
       React.createElement(Input, {
         defaultValue: this.props.defaultValue,
         autoFocus: this.props.autoFocus,
@@ -381,6 +379,7 @@ var Omnibar$1 = /** @class */ (function(_super) {
         onFocus: this.handleFocus,
       }),
       this.state.displayResults &&
+        this.state.results.length > 0 &&
         Results({
           children: this.props.render || this.props.children,
           selectedIndex: this.state.selectedIndex,
